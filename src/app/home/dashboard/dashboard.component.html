@@ -1,0 +1,11 @@
+<div class="container pt-5">
+    <h2> Ultimos modelos </h2>
+    
+    <div class="car-container">
+        <app-car-card
+            *ngFor="let car of lastCars"
+            [car]="car"
+        ></app-car-card>
+    </div>
+    
+</div>
