@@ -23,6 +23,17 @@ export class SignInComponent implements OnInit {
   onSignIn(){
     console.log('FormGroup: ' , this.group);
     
+    const values = this.group.value;
+    const formIsValid = this.group.valid;
+    const controlName = this.group.get('name');
+    const controlNameIsValid = this.group.get('name').valid;
+
+    if(values.password === values.confirmPassword){
+      console.log('Formulario válido');
+    } else{
+      console.log('Las contrasñas no son iguales');
+      
+    }
   }
 
 }
