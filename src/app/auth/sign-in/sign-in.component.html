@@ -1,16 +1,23 @@
 <div class="text-center signin-container">
-    <div class="form-signin">
+    <!-- Añadiendo el tributo formgroup al div que corresponde al grupo creado en el ts-->
+    <div class="form-signin" [formGroup]="group">
         <img class="mb-4" src="./../../../assets/images/user.svg" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Registrarse</h1>
+
+        <!-- Añadiendo atributos formControlName a los inputs, que correpsonden a los valores creados en el ts -->
         <label for="inputName" class="sr-only">Nombre</label>
-        <input type="email" id="inputName" class="form-control" placeholder="Nombre">
+        <input type="email" id="inputName" class="form-control" placeholder="Nombre" formControlName="name">
+
         <label for="inputEmail" class="sr-only">Email</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email">
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email" formControlName="email">
+
         <label for="inputPassword" class="sr-only">Contraseña</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required formControlName="password">
+
         <label for="inputConfirmPassword" class="sr-only">Contraseña</label>
-        <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Confirmar contraseña" required>
-        <button class="btn btn-lg btn-secondary btn-block">Registrarse</button>
+        <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Confirmar contraseña" required formControlName="confirmPassword">
+
+        <button class="btn btn-lg btn-secondary btn-block" (click)="onSignIn()">Registrarse</button>
         <p class="mt-5 mb-3 text-muted">&copy; uveg</p>
     </div>
 </div>
