@@ -77,4 +77,14 @@ export class DashboardComponent implements OnInit {
 
   }
 
+  onBuyEvent(event: ICar){
+    console.log('Comprar: ', event);
+    
+  }
+
+  onNoInterestedEvent(event: string){
+    console.log('No estoy interesado: ', event);
+    
+  }
+
 }

@@ -5,6 +5,8 @@
         <app-car-card
             *ngFor="let car of lastCars"
             [car]="car"
+            (buyEvent)="onBuyEvent($event)"
+            (notInterestedEvent)="onNoInterestedEvent($event)"
         ></app-car-card>
     </div>
     

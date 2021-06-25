@@ -35,4 +35,15 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/','module-auth','sign-in']);
   }
 
+  // Añadiendo la funcion del evento del teclado
+  onKeyPress(event: any){
+    console.log(event);
+    
+  }
+
+  onChange(event){
+    console.log(event);
+    
+  }
+
 }

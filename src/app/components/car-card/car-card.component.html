@@ -5,7 +5,7 @@
     <div class="card-body">
         <h5 class="card-title"> {{ car ? car.title : 'Sin nombre' }} </h5>
         <p class="card-text"> {{ (car ? car.description : 'Sin descripción') | slice:1:150 }} ... </p>
-        <button href="#" class="btn btn-primary">Comprar</button>
-        <button href="#" class="btn btn-secondary ml-3"> No me interesa </button>
+        <button href="#" class="btn btn-primary" (click)="onBuy()">Comprar</button>
+        <button href="#" class="btn btn-secondary ml-3" (click)="onNoInterested()"> No me interesa </button>
     </div>
 </div>
