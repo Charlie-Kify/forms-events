@@ -3,10 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { HasSessionGuard } from '../guards/has-session/has-session.guard';
 
 const routesChildren: Routes = [
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'about', component: AboutComponent},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [HasSessionGuard]},
+  {path: 'about', component: AboutComponent, canActivate: [HasSessionGuard]},
   {path: '**', redirectTo: 'dashboard', pathMatch: 'full'},
 ];
 

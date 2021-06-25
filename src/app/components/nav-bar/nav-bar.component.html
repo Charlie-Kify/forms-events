@@ -15,7 +15,7 @@
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item" [routerLink]="'/module-auth/login'">
+          <li class="nav-item" (click)="onLogOut()" >
             <a class="nav-link" >Salir</a>
           </li>
         </ul>
