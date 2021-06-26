@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
   onLogIn(){
     if(this.loginForm.valid){
       console.log('inicio de sesión correcto');
+      this.router.navigate(['/','module-home','home'])
     } else{
       this.loginForm.markAllAsTouched();
       console.log('Ingrese todos los campos');
