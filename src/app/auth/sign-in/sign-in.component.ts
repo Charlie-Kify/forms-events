@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -9,7 +11,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class SignInComponent implements OnInit {
   group: FormGroup;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+  ) { }
 
   ngOnInit(): void {
     this.group = new FormGroup({
@@ -30,6 +35,13 @@ export class SignInComponent implements OnInit {
 
     if(values.password === values.confirmPassword){
       console.log('Formulario válido');
+
+      this.authService.signIn(
+        values.name,
+        values.email,
+        values.password,
+      );
+      this.router.navigate(['/','module-home', 'dashboard']);
     } else{
       console.log('Las contrasñas no son iguales');
       
